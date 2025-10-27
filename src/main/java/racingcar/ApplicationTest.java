@@ -3,6 +3,7 @@ package racingcar;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.assertThatCode;
 
 class ApplicationTest {
 
@@ -28,5 +29,29 @@ class ApplicationTest {
         })
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("공백");
+    }
+
+    @Test
+    @DisplayName("시도할 횟수가 숫자가 아닐 경우의 예외 테스트")
+    void 시도_횟수_숫자_아님_예외() {
+        String input = "abc"; // 숫자가 아님
+
+        assertThatThrownBy(() -> {
+            Application.exceptionCount(input); // ...
+        })
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("정수");
+    }
+
+    @Test
+    @DisplayName("시도할 횟수가 1 미만일 경우의 예외 테스트")
+    void 시도_횟수_1_미만_예외() {
+        String input = "0"; // 1 미만
+
+        assertThatThrownBy(() -> {
+            Application.exceptionCount(input);
+        })
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("1 이상");
     }
 }
