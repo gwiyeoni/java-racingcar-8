@@ -14,7 +14,7 @@ public class Application {
         System.out.println("시도할 횟수는 몇 회인가요?");
         String count = Console.readLine();
 
-
+        exceptionCount(count);
 
     }
 
@@ -26,6 +26,15 @@ public class Application {
             if (carName.trim().isEmpty()) {
                 throw new IllegalArgumentException("자동차 이름은 공백일 수 없습니다.");
             }
+        }
+    }
+
+    private static void exceptionCount(String count) {
+        int num;
+        try {
+            num = Integer.parseInt(count);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도할 횟수는 정수여야 합니다");
         }
     }
 }
