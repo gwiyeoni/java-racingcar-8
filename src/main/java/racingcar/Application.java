@@ -21,7 +21,7 @@ public class Application {
         game.play();
     }
 
-    private static void exceptionCarName(String[] carNameArr) {
+    public static void exceptionCarName(String[] carNameArr) {
         for (String carName : carNameArr) {
             if (carName.length() > 5) {
                 throw new IllegalArgumentException("자동차 이름은 5자를 초과하면 안됩니다");
@@ -32,7 +32,7 @@ public class Application {
         }
     }
 
-    private static void exceptionCount(String carCount) {
+    public static void exceptionCount(String carCount) {
         int count;
         try {
             count = Integer.parseInt(carCount);
