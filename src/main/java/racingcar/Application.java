@@ -36,5 +36,9 @@ public class Application {
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("시도할 횟수는 정수여야 합니다");
         }
+
+        if (num < 1) {
+            throw new IllegalArgumentException("시도할 횟수는 1 이상이어야 합니다.");
+        }
     }
 }
