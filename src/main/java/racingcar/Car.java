@@ -12,5 +12,10 @@ public class Car {
 
     public void move() {
         int rand = Randoms.pickNumberInRange(0, 9);
+        if (rand >= 4) {
+            this.pos = this.pos + 1;
+        }
     }
+
+
 }
