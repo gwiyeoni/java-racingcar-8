@@ -19,4 +19,17 @@ public class Game {
         }
         return newCars;
     }
+
+    public void play() {
+        System.out.println("\n실행 결과");
+        for (int i = 0; i < roundCount; i++) {
+            playRound();
+        }
+    }
+
+    private void playRound() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
 }
