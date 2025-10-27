@@ -27,6 +27,10 @@ public class Game {
             playResult();
             System.out.println();
         }
+
+        int maxPos = findMaxPos();
+        List<String> winners = findWinners(maxPos);
+        System.out.println(winners);
     }
 
     private void playRound() {
@@ -52,4 +56,23 @@ public class Game {
         }
     }
 
+    private int findMaxPos() {
+        int maxPos = 0;
+        for (Car car : cars) {
+            if (car.getPos() > maxPos) {
+                maxPos = car.getPos();
+            }
+        }
+        return maxPos;
+    }
+
+    private List<String> findWinners(int maxPos) {
+        List<String> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPos() == maxPos) {
+                winners.add(car.getName());
+            }
+        }
+        return winners;
+    }
 }
