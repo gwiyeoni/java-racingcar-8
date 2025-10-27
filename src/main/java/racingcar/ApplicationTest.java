@@ -54,4 +54,16 @@ class ApplicationTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("1 이상");
     }
+
+    @Test
+    @DisplayName("정상적인 입력일 경우 테스트")
+    void 정상_입력_테스트() {
+        String[] carNames = {"pobi", "woni"};
+        String count = "5";
+
+        assertThatCode(() -> {
+            Application.exceptionCarName(carNames);
+            Application.exceptionCount(count);
+        }).doesNotThrowAnyException();
+    }
 }
