@@ -16,6 +16,4 @@ public class Car {
             this.pos = this.pos + 1;
         }
     }
-
-
 }
