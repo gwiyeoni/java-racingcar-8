@@ -24,6 +24,8 @@ public class Game {
         System.out.println("\n실행 결과");
         for (int i = 0; i < roundCount; i++) {
             playRound();
+            playResult();
+            System.out.println();
         }
     }
 
@@ -32,4 +34,22 @@ public class Game {
             car.move();
         }
     }
+
+    private void playResult() {
+        for (Car car : cars) {
+            String carName = car.getName();
+            int carPos = car.getPos();
+
+            System.out.print(carName + ":");
+            printStick(carPos);
+            System.out.println();
+        }
+    }
+
+    private void printStick(int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print("-");
+        }
+    }
+
 }
