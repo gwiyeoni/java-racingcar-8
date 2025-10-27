@@ -16,4 +16,8 @@ public class Car {
             this.pos = this.pos + 1;
         }
     }
+
+    public String getName() {
+        return name;
+    }
 }
