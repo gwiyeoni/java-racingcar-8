@@ -12,10 +12,13 @@ public class Application {
         exceptionCarName(carNameArr);
 
         System.out.println("시도할 횟수는 몇 회인가요?");
-        String count = Console.readLine();
+        String carCount = Console.readLine();
 
-        exceptionCount(count);
+        exceptionCount(carCount);
+        int count = Integer.parseInt(carCount);
 
+        Game game = new Game(carNameArr, count);
+        game.play();
     }
 
     private static void exceptionCarName(String[] carNameArr) {
@@ -29,15 +32,15 @@ public class Application {
         }
     }
 
-    private static void exceptionCount(String count) {
-        int num;
+    private static void exceptionCount(String carCount) {
+        int count;
         try {
-            num = Integer.parseInt(count);
+            count = Integer.parseInt(carCount);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("시도할 횟수는 정수여야 합니다");
         }
 
-        if (num < 1) {
+        if (count < 1) {
             throw new IllegalArgumentException("시도할 횟수는 1 이상이어야 합니다.");
         }
     }

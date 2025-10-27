@@ -42,7 +42,7 @@ public class Game {
             String carName = car.getName();
             int carPos = car.getPos();
 
-            System.out.print(carName + ":");
+            System.out.print(carName + " : ");
             printStick(carPos);
             System.out.println();
         }
@@ -78,6 +78,6 @@ public class Game {
         int maxPos = findMaxPos();
         List<String> winners = findWinners(maxPos);
 
-        System.out.println("최종 우승자 : " + String.join(",", winners));
+        System.out.println("최종 우승자 : " + String.join(", ", winners));
     }
 }
