@@ -23,6 +23,9 @@ public class Application {
             if (carName.length() > 5) {
                 throw new IllegalArgumentException("자동차 이름은 5자를 초과하면 안됩니다");
             }
+            if (carName.trim().isEmpty()) {
+                throw new IllegalArgumentException("자동차 이름은 공백일 수 없습니다.");
+            }
         }
     }
 }
