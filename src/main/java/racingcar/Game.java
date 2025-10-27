@@ -28,9 +28,7 @@ public class Game {
             System.out.println();
         }
 
-        int maxPos = findMaxPos();
-        List<String> winners = findWinners(maxPos);
-        System.out.println(winners);
+        printWinner();
     }
 
     private void playRound() {
@@ -74,5 +72,12 @@ public class Game {
             }
         }
         return winners;
+    }
+
+    private void printWinner() {
+        int maxPos = findMaxPos();
+        List<String> winners = findWinners(maxPos);
+
+        System.out.println("최종 우승자 : " + String.join(",", winners));
     }
 }
